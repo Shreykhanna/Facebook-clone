@@ -32,17 +32,29 @@ const StyledCreateNewAccountComponent = styled("button")({
   borderRadius: "8px",
 });
 const SignIn = () => {
-  const handleLogin = () => {
-    console.log("clcoed");
+  const [input, setState] = useState({ email: "", password: "" });
+  const handleInput = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setState((prev) => ({ ...prev, [event.target.name]: event.target.value }));
+    console.log("inputs", input);
+  };
+  const handleLogin = (event: React.FormEvent) => {
+    event.preventDefault();
   };
   return (
     <div className="grid grid-rows-2 gap-4 mt-14 align-center">
       <StyledEmailAddressComponent
         type="text"
         placeholder="Email address or phone number"
+        name="email"
+        onChange={(event) => handleInput(event)}
       />
-      <StyledPasswordComponent type="password" placeholder="Password" />
-      <StyledLoginButtonComponent onClick={handleLogin}>
+      <StyledPasswordComponent
+        type="password"
+        placeholder="Password"
+        name="password"
+        onChange={(event) => handleInput(event)}
+      />
+      <StyledLoginButtonComponent onClick={(event) => handleLogin(event)}>
         Login
       </StyledLoginButtonComponent>
       <StyledForgotPasswordComponent>
