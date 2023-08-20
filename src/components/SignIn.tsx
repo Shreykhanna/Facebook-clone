@@ -4,19 +4,24 @@ import { styled } from "styled-components";
 
 const StyledEmailAddressComponent = styled("input")({
   height: "60px",
+  paddingLeft: "4%",
   border: "1px solid #dddfe2",
   borderRadius: "8px",
+  margin: "4% 4% auto",
 });
 const StyledPasswordComponent = styled("input")({
   height: "60px",
+  paddingLeft: "4%",
   border: "1px solid #dddfe2",
   borderRadius: "8px",
+  margin: "1% 4% auto",
 });
 const StyledLoginButtonComponent = styled("button")({
   height: "50px",
   backgroundColor: "#3975ea",
   color: "white",
   borderRadius: "8px",
+  margin: "1% 4% auto",
 });
 const StyledForgotPasswordComponent = styled("button")({
   color: "#3975ea",
@@ -30,7 +35,14 @@ const StyledCreateNewAccountComponent = styled("button")({
   width: "60%",
   height: "60px",
   borderRadius: "8px",
+  marginBottom: "5%",
 });
+
+const StyledDivider = styled("div")({
+  border: "1px solid #FAFAFB",
+  margin: "0 8% ",
+});
+
 const SignIn = () => {
   const [input, setState] = useState({ email: "", password: "" });
   const handleInput = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -41,7 +53,7 @@ const SignIn = () => {
     event.preventDefault();
   };
   return (
-    <div className="grid grid-rows-2 gap-4 mt-14 align-center">
+    <div className="grid grid-rows-2 gap-4 mt-14 align-center border bg-white rounded-lg">
       <StyledEmailAddressComponent
         type="text"
         placeholder="Email address or phone number"
@@ -60,6 +72,7 @@ const SignIn = () => {
       <StyledForgotPasswordComponent>
         Forgotten password?
       </StyledForgotPasswordComponent>
+      <StyledDivider />
       <StyledCreateNewAccountComponent>
         Create new account
       </StyledCreateNewAccountComponent>

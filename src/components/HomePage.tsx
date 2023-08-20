@@ -9,14 +9,13 @@ const FacebookSubtitle = styled("div")({
 });
 const HomePage = () => {
   return (
-    <div className="grid grid-rows-2 md:grid-cols-2 gap-4">
-      <div className="mt-[-30%] ml-[10%]">
+    <div className="grid grid-rows-2 mt-[15%] md:grid-cols-2 gap-4">
+      <div className="mt-[-20%] ml-[10%] ">
         <Image
           src="/facebook_logo.png"
           alt="facebook_logo"
-          width={400}
+          width={250}
           height={100}
-          className="ml-20%"
         />
         <FacebookSubtitle>
           <p>
@@ -24,7 +23,7 @@ const HomePage = () => {
           </p>
         </FacebookSubtitle>
       </div>
-      <div className="md:ml-[10%] mt-[-30%]">
+      <div className="md:ml-[10%] mt-[-38%]">
         <SignIn />
       </div>
     </div>
